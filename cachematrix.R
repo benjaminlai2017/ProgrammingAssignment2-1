@@ -20,7 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
         getmatrix <- function() m
         list(set = set, get = get,
              setmatrix = setmatrix,
-             getmatrix = getmatrix)      
+            getmatrix = getmatrix)      
 }
 
 
@@ -42,3 +42,15 @@ cacheSolve <- function(x, ...) {
         x$setmatrix(m)
         m
 }
+
+#test the results of the above functions
+#> a<-makeCacheMatrix(matrix(1:4,2,2))
+#> cacheSolve(a)
+#[,1] [,2]
+#[1,]   -2  1.5
+#[2,]    1 -0.5
+#> cacheSolve(a)
+#getting cached data
+#[,1] [,2]
+#[1,]   -2  1.5
+#[2,]    1 -0.5
